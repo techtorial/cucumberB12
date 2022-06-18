@@ -6,7 +6,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.devtools.v85.page.Page;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.BrowserUtils;
+
+import java.time.Duration;
 
 public class WebOrderGroupOrderPage {
 
@@ -48,12 +52,14 @@ public class WebOrderGroupOrderPage {
     public void sendingInviteList(String email1,String email2 ){
         inviteList.sendKeys(email1+","+email2);
     }
-    
+
     public void clickOrderButton(){
         createGroupOrderButton.click();
     }
 
-    public boolean validateHeader(String expectedHeader){
+    public boolean validateHeader(WebDriver driver,String expectedHeader){
+        WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.titleIs("View Group Order - Weborder"));
         return BrowserUtils.getText(header).equals(expectedHeader);
     }
 
