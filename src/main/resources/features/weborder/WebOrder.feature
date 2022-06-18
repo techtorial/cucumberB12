@@ -15,8 +15,13 @@ Feature: WebOrder page Food Order Functionality
     Given User navigates to the WebOrder
     And  User provides credentials 'guest1@microworks.com' and 'Guest1!' for WebOrder
     When User validates the 'ORDER DETAILS - Weborder' from homepage
-    And Use clicks Group Order Box and Next Button
-
+    And User clicks Group Order Box and Next Button
+    And User chooses the delivery address 'My House' and validates the address '1854 Empire Blvd'
+    And User sends the word 'Test' for Note to Invitees part
+    And User sends e-mail addresses which are 'ahmet@gmail.com' and 'berkay@gmail.com' to Invite List
+    And User clicks create group order button.
+    Then User validates the header of page is 'View Group Order'
+    And User validates total participant is 1
 
 
 

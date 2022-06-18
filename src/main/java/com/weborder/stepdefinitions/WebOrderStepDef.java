@@ -10,7 +10,7 @@ public class WebOrderStepDef {
     WebDriver driver= DriverHelper.getDriver();
     WebOrderPage orderPage=new WebOrderPage(driver);
 
-    @When("Use clicks Group Order Box and Next Button")
+    @When("User clicks Group Order Box and Next Button")
     public void use_clicks_group_order_box_and_next_button() {
     orderPage.clickTheButtons();
     }
