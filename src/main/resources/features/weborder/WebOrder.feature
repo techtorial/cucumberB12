@@ -1,3 +1,4 @@
+@regression @smoke
 Feature: WebOrder page Food Order Functionality
 
   # Navigate to the website and login successfully
@@ -11,8 +12,8 @@ Feature: WebOrder page Food Order Functionality
   #Validate View Group Order header
   #Validate total participant is 1
   Background:
-    Given User navigates to the WebOrder
-    And  User provides credentials 'guest1@microworks.com' and 'Guest1!' for WebOrder
+    #Given User navigates to the WebOrder
+    Given  User provides credentials 'guest1@microworks.com' and 'Guest1!' for WebOrder
     When User validates the 'ORDER DETAILS - Weborder' from homepage
     And User clicks Group Order Box and Next Button
     And User sends the word 'Test' for Note to Invitees part
@@ -29,6 +30,8 @@ Feature: WebOrder page Food Order Functionality
     And User clicks create group order button.
     Then User validates the header of page is 'View Group Order'
     And User validates total participant is 1
+
+
 
 
 

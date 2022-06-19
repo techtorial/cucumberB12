@@ -12,8 +12,7 @@ import utils.ConfigReader;
 import utils.DriverHelper;
 
 public class WebOrderLoginStepDef {
-    WebDriver driver;
-
+    WebDriver driver=DriverHelper.getDriver();
 
 //    @When("User provides correct {string} and {string} for WebOrder")
 //    public void user_provides_correct_and_for_web_order(String userName, String password) {
@@ -57,7 +56,6 @@ public class WebOrderLoginStepDef {
 
     @Given("User navigates to the WebOrder")
     public void user_navigates_to_the_web_order() {
-        driver= DriverHelper.getDriver();
         driver.get(ConfigReader.readProperty("weborderurl"));
     }
 

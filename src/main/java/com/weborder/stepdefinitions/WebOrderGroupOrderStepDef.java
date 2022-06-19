@@ -10,10 +10,7 @@ public class WebOrderGroupOrderStepDef {
      WebDriver driver= DriverHelper.getDriver();
      WebOrderGroupOrderPage webOrderGroupOrderPage=new WebOrderGroupOrderPage(driver);
 
-    @When("User chooses the delivery address {string} and validates the address {string}")
-    public void user_chooses_the_delivery_address_and_validates_the_address(String deliveryOption, String address) {
-        webOrderGroupOrderPage.chooseTheDeliveryOption(deliveryOption,address);
-    }
+
 
     @When("User sends the word {string} for Note to Invitees part")
     public void user_sends_the_word_for_note_to_invitees_part(String note) {
@@ -38,6 +35,10 @@ public class WebOrderGroupOrderStepDef {
     @Then("User validates total participant is {int}")
     public void user_validates_total_participant_is(int expectedNumber) {
         Assert.assertEquals(expectedNumber,webOrderGroupOrderPage.getNumberOfParticipant());
-        driver.quit();
+    }
+
+    @When("User chooses the delivery address {string} and validates the address {string}")
+    public void user_chooses_the_delivery_address_and_validates_the_address(String deliveryOption, String address) {
+        webOrderGroupOrderPage.chooseTheDeliveryOption(deliveryOption,address);
     }
 }
