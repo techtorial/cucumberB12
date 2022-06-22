@@ -20,7 +20,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
      features = "src/main/resources/features/weborder",
         glue = "com/weborder/stepdefinitions",
-        dryRun = false,
+        dryRun = true,
         tags ="@regression and @smoke",
         plugin ={"pretty","html:target/uiReport.html","rerun:target/uiFailedTests.txt"}
 )
