@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
         features = "src/main/resources/features/products",
         glue = "com/products/stepdefinitions",
         dryRun = false,
-        tags ="@product",
+        tags ="@producttable",
         plugin ={"pretty","html:target/uiReport.html","rerun:target/uiFailedTests.txt"}
 )
 

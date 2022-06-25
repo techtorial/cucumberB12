@@ -16,12 +16,14 @@ Feature: Validation of Products
     And User enters the address information '<CustomerName>','<Street>','<City>','<State>','<ZipCode>'
     And User enters the payment information '<CardNumber>','<ExpireDate>','<CardType>' and process the order
     Then User validates the message '<Message>'
-    And User clicks View All Orders and validates 'Name','Product','quantity','Street','City','State','Zip','Card','CardNumber','Expiration'
+    And User clicks View All Orders and validates '<CustomerName>','<ProductName>','<Quantity>','<Street>','<City>','<State>','<ZipCode>','<CardType>','<CardNumber>','<ExpireDate>'
 
     Examples:
       | ProductName | Quantity | CustomerName | Street | City           | State | ZipCode | CardNumber | ExpireDate | CardType         | Message                                |
-      | MyMoney     | 4        | Ahmet        | Midway | Mount Prospect | IL    | 600056  | 123456789  | 12/22      | VISA             | New order has been successfully added. |
+      | MyMoney     | 4        | Ahmet        | Midway | Mount Prospect | IL    | 600056  | 123456789  | 12/22      | Visa             | New order has been successfully added. |
       | FamilyAlbum | 10       | Ahmet        | Midway | Mount Prospect | IL    | 600056  | 123456789  | 12/22      | MasterCard       | New order has been successfully added. |
       | ScreenSaver | 7        | Ahmet        | Midway | Mount Prospect | IL    | 600056  | 123456789  | 12/22      | American Express | New order has been successfully added. |
+
+
 
 
